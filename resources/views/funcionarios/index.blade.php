@@ -1,19 +1,19 @@
-@extends('templates.main', ['titulo' => "funcionarios", 'rota' => "funcionarios.create"])
+@extends('templates.main', ['titulo' => "Funcionários", 'rota' => "funcionarios.create"])
 
-@section('titulo') Funcionarios @endsection
+@section('titulo') Cursos @endsection
 @section('conteudo')
 
     <div class="row">
         <div class="col">
             
             <x-datalist
-                :title="'funcionarios'"
-                :header="['NOME', 'AÇÕES']" 
+                :title="'Funcionários'"
+                :header="['NOME', 'TELEFONE', 'ENDEREÇO', 'SEXO', 'DATA DE NASCIMENTO', 'TELEFONE DE EMERGENCIA', 'ATIVO', 'AÇÕES']" 
                 :data="$data"
-                :fields="['nome']"
-                :hide="[true, true, false]" 
+                :fields="['nome', 'telefone', 'endereco', 'sexo', 'dataNascimento', 'telefoneEmergencia', 'ativo']"
+                :hide="[true, true, true, true, true, true, true, false]" 
                 :crud="'funcionarios'"
-                :info="['nome']"
+                :info="['nome','telefone', 'endereco', 'sexo', 'dataNascimento', 'telefoneEmergencia', 'ativo']"
                 :remove="'nome'"
             />
 

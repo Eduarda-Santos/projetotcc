@@ -6,24 +6,97 @@
     @csrf
     @method('PUT')
     <div class="row">
-        <div class="col" >
+        <div class="col">
             <div class="form-floating mb-3">
-                <input 
-                    type="text" 
-                    class="form-control @if($errors->has('nome')) is-invalid @endif" 
-                    name="nome" 
-                    value="{{$data->nome}}"
-                    placeholder="Nome"
-                />
-                <label for="nome">Nome do Funcionario/Área</label>
+                <input type="text" class="form-control @if($errors->has('nome')) is-invalid @endif" name="nome" placeholder="Nome" value="{{old('nome')}}" />
+                <label for="nome">Nome do Funcionário</label>
                 @if($errors->has('nome'))
-                    <div class='invalid-feedback'>
-                        {{ $errors->first('nome') }}
-                    </div>
+                <div class='invalid-feedback'>
+                    {{ $errors->first('nome') }}
+                </div>
                 @endif
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control @if($errors->has('telefone')) is-invalid @endif" name="telefone" placeholder="Telefone" value="{{old('telefone')}}" />
+                <label for="telefone">Telefone do Funcionário</label>
+                @if($errors->has('telefone'))
+                <div class='invalid-feedback'>
+                    {{ $errors->first('telefone') }}
+                </div>
+                @endif
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control @if($errors->has('endereco')) is-invalid @endif" name="endereco" placeholder="Endereço" value="{{old('endereco')}}" />
+                <label for="endereco">Endereço do Funcionário</label>
+                @if($errors->has('endereco'))
+                <div class='invalid-feedback'>
+                    {{ $errors->first('endereco') }}
+                </div>
+                @endif
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control @if($errors->has('sexo')) is-invalid @endif" name="sexo" placeholder="Sexo" value="{{old('sexo')}}" />
+                <label for="sexo">Sexo do Funcionário</label>
+                @if($errors->has('sexo'))
+                <div class='invalid-feedback'>
+                    {{ $errors->first('sexo') }}
+                </div>
+                @endif
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control @if($errors->has('dataNascimento')) is-invalid @endif" name="dataNascimento" placeholder="Data de Nascimento" value="{{old('dataNascimento')}}" />
+                <label for="dataNascimento">Data de Nascimento do Funcionário</label>
+                @if($errors->has('dataNascimento'))
+                <div class='invalid-feedback'>
+                    {{ $errors->first('dataNascimento') }}
+                </div>
+                @endif
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control @if($errors->has('telefoneEmergencia')) is-invalid @endif" name="telefoneEmergencia" placeholder="Telefone de Emergência" value="{{old('telefoneEmergencia')}}" />
+                <label for="telefoneEmergencia">Telefone de Emergência do Funcionário</label>
+                @if($errors->has('telefoneEmergencia'))
+                <div class='invalid-feedback'>
+                    {{ $errors->first('telefoneEmergencia') }}
+                </div>
+                @endif
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control @if($errors->has('ativo')) is-invalid @endif" name="ativo" placeholder="Ativo" value="{{old('ativo')}}" />
+                <label for="ativo">Ativo do Funcionário</label>
+                @if($errors->has('ativo'))
+                <div class='invalid-feedback'>
+                    {{ $errors->first('ativo') }}
+                </div>
+                @endif
+            </div>
+        </div>
+    </div>
+    <div class="row">
     <div class="row">
         <div class="col">
             <a href="{{route('funcionarios.index')}}" class="btn btn-secondary btn-block align-content-center">
