@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Funcionario;
 
 use Illuminate\Http\Request;
 
 class FuncionarioController extends Controller {
     
     public function index() {
-        return "<h2>Lista de Clientes</h2>";
+        $data = Funcionario::all();
+        return view('funcionarios.index', compact('data'));
     }
 
     public function create() {
@@ -26,7 +28,7 @@ class FuncionarioController extends Controller {
             'telefone' => $request->telefone,
             'endereco' => $request->endereco,
             'sexo' => $request->sexo,
-            'data' => $request->data,
+            'dataNascimento' => $request->dataNascimento,
             'telefoneEmergencia' => $request->telefoneEmergencia,
             'ativo' => $request->ativo,
         ]);
