@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FuncionarioController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +16,12 @@ Route::get('/', function () {
     return view('templates.main')->with('titulo', "");
 })->name('index');
 
-//Route::redirect('/funcionarios', 301);
-Route::get('/funcionarios', 'App\Http\Controllers\FuncionarioController@index');
+Route::redirect('/funcionarios', 301);
+Route::resource('funcionarios', 'FuncionarioController');
 
+Route::redirect('/areas', 302);
+Route::resource('areas', 'AreaController');
+
+Route::redirect('/vacinas', 303);
+Route::resource('vacinas', 'VacinaController');
 
