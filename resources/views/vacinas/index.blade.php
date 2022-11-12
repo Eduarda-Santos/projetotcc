@@ -1,19 +1,19 @@
-@extends('templates.main', ['titulo' => "Áreas", 'rota' => "areas.create"])
+@extends('templates.main', ['titulo' => "Vacinas", 'rota' => "vacinas.create"])
 
-@section('titulo') Cursos @endsection
+@section('titulo') Vacinas @endsection
 @section('conteudo')
 
     <div class="row">
         <div class="col">
             
             <x-datalist
-                :title="'Áreas'"
-                :header="['NOME','AÇÕES']" 
+                :title="'Vacinas'"
+                :header="['NOME','OBSERVAÇÃO','AÇÕES']" 
                 :data="$data"
-                :fields="['nome']"
-                :hide="[true, false]" 
-                :crud="'areas'"
-                :info="['nome']"
+                :fields="['nome', 'observaocao']"
+                :hide="[true, true, false]" 
+                :crud="'vacinas'"
+                :info="['nome', 'observaocao']"
                 :remove="'nome'"
             />
 
