@@ -8,7 +8,7 @@
             
             <x-datalist
                 :title="'Contaminações'"
-                :header="['DOSE','DATA DA VACINA','LOTE']" 
+                :header="['INÍCIO SINTOMAS','INÍCIO AFASTAMENTO','REALIZAÇÃO EXAME','RESULTADO EXAME','TÉRMINO AFASTAMENTO','ANEXO','DESCRIÇÃO']" 
                 :data="$data"
                 :fields="['dataInicioSintomas','dataInicioAfastamento','dataRealizacaoExame','resultadoExame','dataTerminoAfastamento','anexo','descricao']"
                 :hide="[true, true, true, true, true, true, true, false]" 
