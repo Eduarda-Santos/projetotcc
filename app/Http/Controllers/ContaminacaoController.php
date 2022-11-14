@@ -9,12 +9,12 @@ class ContaminacaoController extends Controller {
     
     public function index() {
         $data = Contaminacao::all();
-        return view('contamicoes.index', compact('data'));
+        return view('contaminacoes.index', compact('data'));
     }
 
     public function create() {
         
-        return view('contamicoes.create');
+        return view('contaminacoes.create');
     }
 
     public function store(Request $request) {
@@ -32,7 +32,7 @@ class ContaminacaoController extends Controller {
             'descricao' => $request->descricao,
         ]);
         
-        return redirect()->route('contamicoes.index');
+        return redirect()->route('contaminacoes.index');
     }
 
     public function show($id) { }
@@ -43,7 +43,7 @@ class ContaminacaoController extends Controller {
 
         if(!isset($data)) { return "<h1>ID: $id não encontrado!</h1>"; }
 
-        return view('contamicoes.edit', compact('data'));    
+        return view('contaminacoes.edit', compact('data'));    
     }
 
     public function update(Request $request, $id) {
@@ -63,7 +63,7 @@ class ContaminacaoController extends Controller {
 
         $obj->save();
 
-        return redirect()->route('contamicoes.index');
+        return redirect()->route('contaminacoes.index');
     }
 
     public function destroy($id) {
@@ -74,6 +74,6 @@ class ContaminacaoController extends Controller {
 
         $obj->destroy($id);
 
-        return redirect()->route('contamicoes.index');
+        return redirect()->route('contaminacoes.index');
     }
 }
