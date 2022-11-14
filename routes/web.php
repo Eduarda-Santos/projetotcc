@@ -31,6 +31,6 @@ Route::resource('exames', 'ExameController');
 Route::redirect('/vacinasFuncionario', 305);
 Route::resource('vacinasFuncionario', 'VacinaFuncionarioController');
 
-Route::redirect('/contaminacoes', 305);
+Route::redirect('/contaminacoes', 306);
 Route::resource('contaminacoes', 'ContaminacaoController');
 
