@@ -1,4 +1,4 @@
-@extends('templates/main', ['titulo'=>"Novo Vacinas"])
+@extends('templates/main', ['titulo'=>"Novas Vacinas"])
 
 @section('conteudo')
 
@@ -8,7 +8,7 @@
         <div class="col">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control @if($errors->has('nome')) is-invalid @endif" name="nome" placeholder="Nome" value="{{old('nome')}}" />
-                <label for="nome">Nome do Vacinas</label>
+                <label for="nome">Nome das Vacinas</label>
                 @if($errors->has('nome'))
                 <div class='invalid-feedback'>
                     {{ $errors->first('nome') }}
@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control @if($errors->has('observacao')) is-invalid @endif" name="observacao" placeholder="Observaçãoo" value="{{old('observacao')}}" />
+                <input type="text" class="form-control @if($errors->has('observacao')) is-invalid @endif" name="observacao" placeholder="Observação" value="{{old('observacao')}}" />
                 <label for="observacao">Observação das Vacinas</label>
                 @if($errors->has('observacao'))
                 <div class='invalid-feedback'>

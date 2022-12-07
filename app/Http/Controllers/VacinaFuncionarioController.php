@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\VacinaFuncionario;
 use App\Models\Vacina;
+use App\Models\Funcionario;
 
 use Illuminate\Http\Request;
 
@@ -20,11 +21,8 @@ class VacinaFuncionarioController extends Controller {
 
     public function store(Request $request) {
 
-        $request->validate([
-            'nome' => 'required|max:50|min:10',
-            ]);
-
         VacinaFuncionario::create([
+            'vacina_id' => $request->vacina_id,
             'funcionario_id' => $request->funcionario_id,
             'dose' => $request->dose,
             'dataVacina' => $request->dataVacinaFuncionario,
@@ -52,6 +50,7 @@ class VacinaFuncionarioController extends Controller {
         if(!isset($obj)) { return "<h1>ID: $id não encontrado!"; }
 
         $obj->fill([
+            'vacina_id' => $request->vacina_id,
             'funcionario_id' => $request->funcionario_id,
             'dose' => $request->dose,
             'dataVacina' => $request->dataVacinaFuncionario,

@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('vacinasfuncionario', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('vacina_id');
+            $table->foreign('vacina_id')->references('id')->on('vacinas');
             $table->unsignedBigInteger('funcionario_id');
+            $table->foreign('funcionario_id')->references('id')->on('funcionarios');
             $table->integer('dose');
             $table->date('dataVacina');
             $table->string('lote');

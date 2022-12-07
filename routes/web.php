@@ -34,3 +34,28 @@ Route::resource('vacinasFuncionario', 'VacinaFuncionarioController');
 Route::redirect('/contaminacoes', 306);
 Route::resource('contaminacoes', 'ContaminacaoController');
 
+/*
+Route::post('vacinas/add', function(Request $request) {
+    
+    $obj_vacinafuncionario = new VacinaFuncionario();
+    $obj_vacinafuncionario->nome = mb_strtoupper($request->nome_vacinafuncionario, 'UTF-8');
+    $obj_vacinafuncionario->observacao = mb_strtoupper($request->obs_vacinafuncionario, 'UTF-8');
+    $obj_vacinafuncionario->save();
+
+            $table->unsignedBigInteger('vacina_id');
+            $table->foreign('vacina_id')->references('id')->on('vacinas');
+            $table->integer('dose');
+            $table->unsignedBigInteger('funcionario_id');
+            $table>foreign('funcionario_id')->references('id')->on('funcionarios');
+            $table->date('dataVacina');
+            $table->string('lote');
+    
+    $obj_vacina = new Vacina();
+    $obj_vacina->nome = mb_strtoupper($request->nome_vacina, 'UTF-8');
+    $obj_vacina->observacao = mb_strtoupper($request->obs_vacina, 'UTF-8');
+    
+    $obj_vacina->vacinafuncionario()->associate($obj_vacinafuncionario);
+    $obj_vacina->save();
+    return "<h1>Vacina Cadastrada com Sucesso!</h1>";
+    });*/
+        

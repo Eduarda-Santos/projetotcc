@@ -10,13 +10,12 @@
                 :title="'Vacinas'"
                 :header="['NOME','OBSERVAÇÃO','AÇÕES']" 
                 :data="$data"
-                :fields="['nome', 'observaocao']"
+                :fields="['nome', 'observacao']"
                 :hide="[true, true, false]" 
                 :crud="'vacinas'"
-                :info="['nome', 'observaocao']"
+                :info="['nome', 'observacao']"
                 :remove="'nome'"
             />
-
         </div>
     </div>
 @endsection
