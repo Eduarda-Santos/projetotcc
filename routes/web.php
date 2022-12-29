@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Vacina;
+use App\Models\VacinaFuncionario;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,7 +35,6 @@ Route::resource('vacinasFuncionario', 'VacinaFuncionarioController');
 
 Route::redirect('/contaminacoes', 306);
 Route::resource('contaminacoes', 'ContaminacaoController');
-
 /*
 Route::post('vacinas/add', function(Request $request) {
     
@@ -54,8 +55,19 @@ Route::post('vacinas/add', function(Request $request) {
     $obj_vacina->nome = mb_strtoupper($request->nome_vacina, 'UTF-8');
     $obj_vacina->observacao = mb_strtoupper($request->obs_vacina, 'UTF-8');
     
-    $obj_vacina->vacinafuncionario()->associate($obj_vacinafuncionario);
-    $obj_vacina->save();
+    $obj_vacinafuncionario->vacina()->associate($obj_vacina);
+    $obj_vacinafuncionario->save();
     return "<h1>Vacina Cadastrada com Sucesso!</h1>";
-    });*/
+});
+
+Route::get('/vacinas', function () {
+    $vacinas = Vacina::with(['vacinafuncionario'])->get();
+    return $vacinas->toJson();
+});
+
+Route::get('/vacinafuncionario', function () {
+    $vacinafuncionario = VacinaFuncionario::with(['vacinas'])->get();
+    return $vacinafuncionario->toJson();
+});
+*/      
         

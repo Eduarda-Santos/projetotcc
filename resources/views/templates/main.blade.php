@@ -18,7 +18,6 @@
     <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-success">
         <div class="container-fluid">
         <a href="{{route('index')}}" class="navbar-brand ms-sm-3">
-                <img src="{{ asset('images/map.jpg') }}" alt="map">
                 <span class="ms-3 fs-5">MCI - MONITORAMENTO DE CONTAMINAÇÕES EM INSTITUIÇÕES</span>
             </a>
             <div class="collapse navbar-collapse" id="itens">
@@ -34,7 +33,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="{{route('funcionarios.index')}}" class="dropdown-item">Funcionarios</a></li>
                             <li><a href="{{route('vacinas.index')}}" class="dropdown-item">Vacinas</a></li>
-                            <li><a href="{{route('areas.index')}}" class="dropdown-item">Areas</a></li>
+                            <li><a href="{{route('areas.index')}}" class="dropdown-item">Áreas</a></li>
                         </ul>
                     </li>
                     <li class="nav-item ps-2 me-3">
