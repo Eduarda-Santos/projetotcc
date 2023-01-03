@@ -47,6 +47,19 @@
     <div class="row">
         <div class="col">
             <div class="form-floating mb-3">
+                <input type="text" class="form-control @if($errors->has('email')) is-invalid @endif" name="email" placeholder="E-mail" value="{{old('email')}}" />
+                <label for="email">E-mail do Funcionário</label>
+                @if($errors->has('email'))
+                <div class='invalid-feedback'>
+                    {{ $errors->first('email') }}
+                </div>
+                @endif
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
                 <input type="text" class="form-control @if($errors->has('sexo')) is-invalid @endif" name="sexo" placeholder="Sexo" value="{{old('sexo')}}" />
                 <label for="sexo">Sexo do Funcionário</label>
                 @if($errors->has('sexo'))

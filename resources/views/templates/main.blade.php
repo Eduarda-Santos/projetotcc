@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <title>MCI</title>
 
@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-success">
+    <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
         <a href="{{route('index')}}" class="navbar-brand ms-sm-3">
                 <span class="ms-3 fs-5">MCI - MONITORAMENTO DE CONTAMINAÇÕES EM INSTITUIÇÕES</span>
@@ -67,7 +67,7 @@
         @yield('conteudo')
     </div>
 </body>
-<nav class="navbar fixed-bottom navbar-dark bg-success">
+<nav class="navbar fixed-bottom navbar-dark bg-dark">
     <div class="container-fluid">
         <span class="text-white fw-light"></span>
     </div>

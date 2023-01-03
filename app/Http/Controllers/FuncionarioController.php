@@ -19,14 +19,11 @@ class FuncionarioController extends Controller {
 
     public function store(Request $request) {
 
-        $request->validate([
-            'nome' => 'required|max:50|min:10',
-            ]);
-
         Funcionario::create([
             'nome' => mb_strtoupper($request->nome, 'UTF-8'),
             'telefone' => $request->telefone,
             'endereco' => $request->endereco,
+            'email' => $request->email,
             'sexo' => $request->sexo,
             'dataNascimento' => $request->dataNascimento,
             'telefoneEmergencia' => $request->telefoneEmergencia,
@@ -57,8 +54,9 @@ class FuncionarioController extends Controller {
             'nome' => mb_strtoupper($request->nome, 'UTF-8'),
             'telefone' => $request->telefone,
             'endereco' => $request->endereco,
+            'email' => $request->email,
             'sexo' => $request->sexo,
-            'data' => $request->data,
+            'dataNascimento' => $request->dataNascimento,
             'telefoneEmergencia' => $request->telefoneEmergencia,
             'ativo' => $request->ativo,
         ]);

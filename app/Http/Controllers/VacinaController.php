@@ -20,7 +20,7 @@ class VacinaController extends Controller {
     public function store(Request $request) {
 
         $request->validate([
-            'nome' => 'required|max:50|min:10',
+            'nome' => 'required|max:50|min:01',
             ]);
 
         Vacina::create([
