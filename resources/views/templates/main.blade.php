@@ -15,9 +15,11 @@
     </style>
 </head>
 <body>
-    <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-secondary">
+
         <div class="container-fluid">
         <a href="{{route('index')}}" class="navbar-brand ms-sm-3">
+                <img src="images/map.jpg" width="36" height="36" fill="currentColor" class="bi bi-server" viewBox="0 0 16 16">
                 <span class="ms-3 fs-5">MCI - MONITORAMENTO DE CONTAMINAÇÕES EM INSTITUIÇÕES</span>
             </a>
             <div class="collapse navbar-collapse" id="itens">
@@ -67,12 +69,6 @@
         @yield('conteudo')
     </div>
 </body>
-<nav class="navbar fixed-bottom navbar-dark bg-dark">
-    <div class="container-fluid">
-        <span class="text-white fw-light"></span>
-    </div>
-</nav>
-
 <div class="modal fade" tabindex="-1" id="infoModal">
     <div class="modal-dialog">
         <div class="modal-content">

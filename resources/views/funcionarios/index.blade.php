@@ -8,7 +8,7 @@
             
             <x-datalist
                 :title="'Funcionários'"
-                :header="['NOME', 'TELEFONE','E-MAIL', 'ENDEREÇO', 'SEXO', 'DATA DE NASCIMENTO', 'TELEFONE DE EMERGENCIA', 'ATIVO', 'AÇÕES']" 
+                :header="['NOME', 'TELEFONE','E-MAIL', 'ENDEREÇO', 'SEXO', 'DATA DE NASCIMENTO', 'TELEFONE DE EMERGÊNCIA', 'ATIVO', 'AÇÕES']" 
                 :data="$data"
                 :fields="['nome', 'telefone', 'email', 'endereco', 'sexo', 'dataNascimento', 'telefoneEmergencia', 'ativo']"
                 :hide="[true, true, true, true, true, true, true, true, false]" 

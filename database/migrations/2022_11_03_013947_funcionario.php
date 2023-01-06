@@ -18,7 +18,7 @@ return new class extends Migration
         $table->integer('telefone');
         $table->string('endereco');
         $table->string('sexo');
-        $table->date('dataNascimento');
+        $table->dateTime('dataNascimento')->nullable();
         $table->integer('telefoneEmergencia');
         $table->boolean('ativo');
         $table->string('email')->unique();

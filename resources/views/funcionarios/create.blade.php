@@ -2,6 +2,10 @@
 
 @section('conteudo')
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 <form action="{{ route('funcionarios.store') }}" method="POST">
     @csrf
     <div class="row">
@@ -76,8 +80,11 @@
     <div class="row">
         <div class="col">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control @if($errors->has('dataNascimento')) is-invalid @endif" name="dataNascimento" placeholder="Data de Nascimento" value="{{old('dataNascimento')}}" />
+                <input type="datetime-local" class="form-control @if($errors->has('dataNascimento')) is-invalid @endif" name="dataNascimento" placeholder="Data de Nascimento" value="{{old('dataNascimento')}}" />
                 <label for="dataNascimento">Data de Nascimento do Funcionário</label>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
                 @if($errors->has('dataNascimento'))
                 <div class='invalid-feedback'>
                     {{ $errors->first('dataNascimento') }}
@@ -98,45 +105,6 @@
                 @endif
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control @if($errors->has('ativo')) is-invalid @endif" name="ativo" placeholder="Ativo" value="{{old('ativo')}}" />
-                <label for="ativo">Ativo do Funcionário</label>
-                @if($errors->has('ativo'))
-                <div class='invalid-feedback'>
-                    {{ $errors->first('ativo') }}
-                </div>
-                @endif
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="form-floating mb-3">
-                <div class='input-group date' id='datetimepicker5'>
-                <input type="text" class="form-control @if($errors->has('datadeNascimento')) is-invalid @endif" name="datadeNascimento" value="{{old('datadeNascimento')}}" />
-                @if($errors->has('datadeNascimento'))
-                <div class='invalid-feedback'>
-                    {{ $errors->first('datadeNascimento') }}
-                </div>
-                @endif
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker5').datetimepicker({
-                    defaultDate: "11/1/2013",
-                    disabledDates: [
-                        moment("12/25/2013"),
-                        new Date(2013, 11 - 1, 21),
-                        "11/22/2013 00:53"
-                    ]
-                });
-            });
-        </script>
     </div>
     <div class="row">
         <div class="col">
@@ -161,5 +129,9 @@
     </div>
     @endforeach
     @endif
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr("input[type=datetime-local]");
+    </script> 
 </form>
 @endsection

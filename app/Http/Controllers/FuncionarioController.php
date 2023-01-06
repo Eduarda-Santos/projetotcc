@@ -27,7 +27,7 @@ class FuncionarioController extends Controller {
             'sexo' => $request->sexo,
             'dataNascimento' => $request->dataNascimento,
             'telefoneEmergencia' => $request->telefoneEmergencia,
-            'ativo' => $request->ativo,
+            'ativo' => 1,
         ]);
         
         return redirect()->route('funcionarios.index');
