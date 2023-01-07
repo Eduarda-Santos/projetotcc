@@ -19,10 +19,6 @@ class ExameController extends Controller {
 
     public function store(Request $request) {
 
-        $request->validate([
-            'nome' => 'required|max:50|min:10',
-            ]);
-
         Exame::create([
             'nome' => mb_strtoupper($request->nome, 'UTF-8'),
             'dataExame' => $request->dataExame,

@@ -1,6 +1,11 @@
-@extends('templates/main', ['titulo'=>"Novo Exames"])
+@extends('templates/main', ['titulo'=>"Novo Exame"])
 
 @section('conteudo')
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 
 <form action="{{ route('exames.store') }}" method="POST">
     @csrf
@@ -20,8 +25,11 @@
     <div class="row">
         <div class="col">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control @if($errors->has('dataExame')) is-invalid @endif" name="dataExame" placeholder="Data do Exame" value="{{old('dataExame')}}" />
+                <input type="datetime-local" class="form-control @if($errors->has('dataExame')) is-invalid @endif" name="dataExame" placeholder="Data do Exame" value="{{old('dataExame')}}" />
                 <label for="dataExame">Data do Exame</label>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
                 @if($errors->has('dataExame'))
                 <div class='invalid-feedback'>
                     {{ $errors->first('dataExame') }}
@@ -33,8 +41,8 @@
     <div class="row">
         <div class="col">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control @if($errors->has('observacao')) is-invalid @endif" name="observacao" placeholder="Observaçãoo" value="{{old('observacao')}}" />
-                <label for="observacao">Observação das Exames</label>
+                <input type="text" class="form-control @if($errors->has('observacao')) is-invalid @endif" name="observacao" placeholder="Observação" value="{{old('observacao')}}" />
+                <label for="observacao">Observação dos Exames</label>
                 @if($errors->has('observacao'))
                 <div class='invalid-feedback'>
                     {{ $errors->first('observacao') }}
@@ -66,5 +74,7 @@
     </div>
     @endforeach
     @endif
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>flatpickr("input[type=datetime-local]");</script> 
 </form>
 @endsection

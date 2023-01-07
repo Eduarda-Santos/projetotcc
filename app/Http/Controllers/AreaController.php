@@ -19,10 +19,6 @@ class AreaController extends Controller {
 
     public function store(Request $request) {
 
-        $request->validate([
-            'nome' => 'required|max:50|min:10',
-            ]);
-
         Area::create([
             'nome' => mb_strtoupper($request->nome, 'UTF-8'),
         ]);

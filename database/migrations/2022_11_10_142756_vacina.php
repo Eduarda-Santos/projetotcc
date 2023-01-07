@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('vacinas', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('observacao');
+            $table->string('observacao')->nullable();
             $table->timestamps();
         });
     }

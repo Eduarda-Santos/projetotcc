@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('resultadoExame');
             $table->date('dataTerminoAfastamento');
             $table->text('anexo');
-            $table->string('descricao');
+            $table->string('descricao')->nullable();
             $table->timestamps();
         });
     }

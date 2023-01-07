@@ -10,10 +10,10 @@
                 :title="'Exames'"
                 :header="['NOME','DATA DO EXAME','OBSERVAÇÃO','AÇÕES']" 
                 :data="$data"
-                :fields="['nome', 'dataExame','observaocao']"
+                :fields="['nome', 'dataExame','observacao']"
                 :hide="[true, true, true, false]" 
                 :crud="'exames'"
-                :info="['nome','dataExame','observaocao']"
+                :info="['nome','dataExame','observacao']"
                 :remove="'nome'"
             />
 

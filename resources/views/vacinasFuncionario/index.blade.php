@@ -8,10 +8,10 @@
             
             <x-datalist
                 :title="'Vacinas dos Funcionários'"
-                :header="['DOSE','DATA DA VACINA','LOTE']" 
+                :header="['DOSE','DATA DA VACINA','LOTE','AÇÕES']" 
                 :data="$data"
                 :fields="['dose','data da vacina','lote']"
-                :hide="[true, true, false]" 
+                :hide="[true, true, true, false]" 
                 :crud="'vacinasFuncionario'"
                 :info="['dose','data da vacina','lote']"
                 :remove="'nome'"

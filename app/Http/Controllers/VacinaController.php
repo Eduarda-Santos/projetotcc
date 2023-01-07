@@ -19,10 +19,6 @@ class VacinaController extends Controller {
 
     public function store(Request $request) {
 
-        $request->validate([
-            'nome' => 'required|max:50|min:01',
-            ]);
-
         Vacina::create([
             'nome' => mb_strtoupper($request->nome, 'UTF-8'),
             'observacao' => $request->observacao,

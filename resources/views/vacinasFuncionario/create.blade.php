@@ -2,6 +2,11 @@
 
 @section('conteudo')
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
 <form action="{{ route('vacinasFuncionario.store') }}" method="POST">
     @csrf
     <div class="row">
@@ -20,8 +25,11 @@
     <div class="row">
         <div class="col">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control @if($errors->has('dataVacina')) is-invalid @endif" name="dataVacina" placeholder="Data da Vacina" value="{{old('dataVacina')}}" />
-                <label for="dataVacina">Data das Vacinas do Funcionário</label>
+                <input type="datetime-local" class="form-control @if($errors->has('dataVacina')) is-invalid @endif" name="dataVacina" placeholder="Data de Nascimento" value="{{old('dataVacina')}}" />
+                <label for="dataVacina">Data das Vacinas</label>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
                 @if($errors->has('dataVacina'))
                 <div class='invalid-feedback'>
                     {{ $errors->first('dataVacina') }}
@@ -66,5 +74,9 @@
     </div>
     @endforeach
     @endif
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        flatpickr("input[type=datetime-local]");
+    </script> 
 </form>
 @endsection

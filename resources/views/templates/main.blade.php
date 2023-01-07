@@ -16,24 +16,24 @@
 </head>
 <body>
     <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-secondary">
-
         <div class="container-fluid">
         <a href="{{route('index')}}" class="navbar-brand ms-sm-3">
-                <img src="images/map.jpg" width="36" height="36" fill="currentColor" class="bi bi-server" viewBox="0 0 16 16">
-                <span class="ms-3 fs-5">MCI - MONITORAMENTO DE CONTAMINAÇÕES EM INSTITUIÇÕES</span>
-            </a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-map" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
+            </svg>
+            <span class="ms-3 fs-5">MCI - MONITORAMENTO DE CONTAMINAÇÕES EM INSTITUIÇÕES</span>
+        </a>
             <div class="collapse navbar-collapse" id="itens">
                 <ul class="navbar-nav ms-auto">
                      <li class="nav-item dropdown ps-2">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FFF" class="bi bi-house-fill" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-                                <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
-                              </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FFF" class="bi bi-border-width" viewBox="0 0 16 16">
+                                <path d="M0 3.5A.5.5 0 0 1 .5 3h15a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-2zm0 5A.5.5 0 0 1 .5 8h15a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1zm0 4a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+                            </svg>
                             <span class="ps-1 text-white">Opções</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{route('funcionarios.index')}}" class="dropdown-item">Funcionarios</a></li>
+                            <li><a href="{{route('funcionarios.index')}}" class="dropdown-item">Funcionários</a></li>
                             <li><a href="{{route('vacinas.index')}}" class="dropdown-item">Vacinas</a></li>
                             <li><a href="{{route('areas.index')}}" class="dropdown-item">Áreas</a></li>
                         </ul>

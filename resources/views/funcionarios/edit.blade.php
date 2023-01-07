@@ -13,7 +13,7 @@
         <div class="col">
             <div class="form-floating mb-3">
                 <button type="button" id="ativo" onclick="disableBtn()" class="btn btn-secondary" name="ativo" placeholder="Ativo" value="{{old('ativo')}}">Ativo</button>
-                <button type="button" id="ativo" onclick="enableBtn()" class="btn btn-secondary" name="ativo" placeholder="Ativo" value="{{old('ativo')}}">Desativo</button>
+                <button type="button" id="ativo" onclick="enableBtn()" class="btn btn-secondary" name="ativo" placeholder="Ativo" value="{{old('ativo')}}">Inativo</button>
                 @if($errors->has('ativo'))
                 <div class='invalid-feedback'>
                     {{ $errors->first('ativo') }}
