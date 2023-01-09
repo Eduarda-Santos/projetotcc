@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('dose');
             $table->date('dataVacina');
             $table->string('lote')->nullable();
+            $table->primary(['funcionario_id', 'vacina_id']);
             $table->timestamps();
         });
     }

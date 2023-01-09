@@ -22,10 +22,10 @@ class VacinaFuncionarioController extends Controller {
     public function store(Request $request) {
 
         VacinaFuncionario::create([
-            'vacina_id' => $request->vacina_id,
-            'funcionario_id' => $request->funcionario_id,
+            'vacina_id' => 1,
+            'funcionario_id' => 1,
             'dose' => $request->dose,
-            'dataVacina' => $request->dataVacinaFuncionario,
+            'dataVacina' => $request->dataVacina,
             'lote' => $request->lote,
         ]);
         
@@ -53,7 +53,7 @@ class VacinaFuncionarioController extends Controller {
             'vacina_id' => $request->vacina_id,
             'funcionario_id' => $request->funcionario_id,
             'dose' => $request->dose,
-            'dataVacina' => $request->dataVacinaFuncionario,
+            'dataVacina' => $request->dataVacina,
             'lote' => $request->lote,
         ]);
 

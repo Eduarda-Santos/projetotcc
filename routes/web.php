@@ -24,18 +24,18 @@ Route::resource('funcionarios', 'FuncionarioController');
 Route::redirect('/areas', 302);
 Route::resource('areas', 'AreaController');
 
-Route::redirect('/vacinas', 303);
-Route::resource('vacinas', 'VacinaController');
-
 Route::redirect('/exames', 304);
 Route::resource('exames', 'ExameController');
+
+Route::redirect('/vacinas', 303);
+Route::resource('vacinas', 'VacinaController');
 
 Route::redirect('/vacinasFuncionario', 305);
 Route::resource('vacinasFuncionario', 'VacinaFuncionarioController');
 
 Route::redirect('/contaminacoes', 306);
 Route::resource('contaminacoes', 'ContaminacaoController');
-/*
+
 Route::post('vacinas/add', function(Request $request) {
     
     $obj_vacinafuncionario = new VacinaFuncionario();
@@ -43,13 +43,13 @@ Route::post('vacinas/add', function(Request $request) {
     $obj_vacinafuncionario->observacao = mb_strtoupper($request->obs_vacinafuncionario, 'UTF-8');
     $obj_vacinafuncionario->save();
 
-            $table->unsignedBigInteger('vacina_id');
-            $table->foreign('vacina_id')->references('id')->on('vacinas');
-            $table->integer('dose');
-            $table->unsignedBigInteger('funcionario_id');
-            $table>foreign('funcionario_id')->references('id')->on('funcionarios');
-            $table->date('dataVacina');
-            $table->string('lote');
+    $table->unsignedBigInteger('vacina_id');
+    $table->foreign('vacina_id')->references('id')->on('vacinas');
+    $table->integer('dose');
+    $table->unsignedBigInteger('funcionario_id');
+    $table>foreign('funcionario_id')->references('id')->on('funcionarios');
+    $table->date('dataVacina');
+    $table->string('lote');
     
     $obj_vacina = new Vacina();
     $obj_vacina->nome = mb_strtoupper($request->nome_vacina, 'UTF-8');
@@ -61,13 +61,12 @@ Route::post('vacinas/add', function(Request $request) {
 });
 
 Route::get('/vacinas', function () {
-    $vacinas = Vacina::with(['vacinafuncionario'])->get();
-    return $vacinas->toJson();
+    $obj_vacina = Vacina::with(['vacinafuncionario'])->get();
+    return $obj_vacina->toJson();
 });
 
 Route::get('/vacinafuncionario', function () {
-    $vacinafuncionario = VacinaFuncionario::with(['vacinas'])->get();
-    return $vacinafuncionario->toJson();
+    $obj_vacinafuncionario = VacinaFuncionario::with(['vacinas'])->get();
+    return $vacinafunobj_vacinafuncionariocionario->toJson();
 });
-*/      
-        
+    

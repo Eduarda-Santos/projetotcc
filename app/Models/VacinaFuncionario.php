@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class VacinaFuncionario extends Model
 {
     use HasFactory;
-    public function sala() {
+    public function vacina() {
         return $this->hasOne('\App\Models\Vacina');
-        }
+    }
     protected $table = "vacinasfuncionario";
     protected $fillable = ['vacina_id','funcionario_id','dose','dataVacina','lote'];
     //para o usuario puzar o nome do funcionario e da vacina
