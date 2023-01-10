@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Vacina;
 use App\Models\VacinaFuncionario;
+use App\Http\Middleware\Mid;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,9 @@ use App\Models\VacinaFuncionario;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function() {
+    return view('welcome');
+})->middleware('Mid');
 
 Route::get('/', function () {
     return view('templates.main')->with('titulo', "");
@@ -67,6 +71,14 @@ Route::get('/vacinas', function () {
 
 Route::get('/vacinafuncionario', function () {
     $obj_vacinafuncionario = VacinaFuncionario::with(['vacinas'])->get();
-    return $vacinafunobj_vacinafuncionariocionario->toJson();
+    return $obj_vacinafuncionario->toJson();
 });
+
+Route::get('/vacinas', 'VacinaController@index')
+->middleware('Mid', 'NewMid');
+
+Route::get('/vacinas/{id}', 'VacinaController@show')
+->middleware('Mid');
+
+
     

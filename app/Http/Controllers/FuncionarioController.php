@@ -76,4 +76,9 @@ class FuncionarioController extends Controller {
 
         return redirect()->route('funcionarios.index');
     }
+
+    public function __construct() {
+        $this->middleware('Mid');
+    }
+        
 }
