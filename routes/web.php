@@ -14,18 +14,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/testfacade', function () {
+    return UserPermissions::test();
+});
+    
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+    return view('templates.main')->With('titulo', "");
+
+})->middleware(['auth'])->name('dashboard');
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('funcionarios', 'FuncionarioController');
+    Route::resource('areas', 'AreaController');
+    Route::resource('exames', 'ExameController');
+    Route::resource('vacinas', 'VacinaController');
+    Route::resource('vacinasFuncionario', 'VacinaFuncionarioController');
+    Route::resource('contaminacoes', 'ContaminacaoController');
+
+    Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
+ });
 
 require __DIR__.'/auth.php';

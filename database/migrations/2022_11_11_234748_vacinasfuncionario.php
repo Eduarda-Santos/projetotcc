@@ -21,8 +21,8 @@ return new class extends Migration
             $table->foreign('funcionario_id')->references('id')->on('funcionarios');
             $table->integer('dose');
             $table->date('dataVacina');
-            $table->string('lote')->nullable();
-            $table->primary(['funcionario_id', 'vacina_id']);
+            $table->string('lote')>nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

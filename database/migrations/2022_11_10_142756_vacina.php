@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->string('observacao')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -194,6 +194,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\CustomFacadeServiceProvider::class,
 
     ],
 
@@ -208,8 +209,11 @@ return [
     |
     */
 
-    'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
-    ])->toArray(),
+    'aliases' => [
+        'App' => Illuminate\Support\Facades\App::class,
+        'View' => Illuminate\Support\Facades\View::class,
+        'UserPermissions' => App\Facades\UserPermissionsFacade::class,
+    ],
+        
 
 ];
