@@ -11,17 +11,18 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
-    {
+    public function up() {
         Schema::create('permissions', function (Blueprint $table) {
-            $table->id();
-            $table->string('regra');
-            $table->boolean('permissao');
-            $table->unsignedBigInteger('type_id');
-            $table->foreign('type_id')->references('id')->on('types');
-            $table->timestamps();
+        $table->unsignedBigInteger('resource_id');
+        $table->foreign('resource_id')->references('id')->on('resources');
+        $table->unsignedBigInteger('role_id');
+        $table->foreign('role_id')->references('id')->on('roles');
+        $table->boolean('permissao');
+        $table->primary(['resource_id', 'role_id']);
+        $table->timestamps();
         });
     }
+        
 
     /**
      * Reverse the migrations.
