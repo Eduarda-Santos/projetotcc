@@ -8,3 +8,4 @@ class UserPermissionsFacade extends Facade {
         return 'userpermissions';
     }
 }
+    

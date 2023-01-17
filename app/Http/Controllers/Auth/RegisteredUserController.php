@@ -12,17 +12,19 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use Illuminate\View\View;
+use App\Facades\UserPermissions;
 
 class RegisteredUserController extends Controller
 {
     /**
      * Display the registration view.
      */
-    public function create(): View
-    {
-        $types = Type::orderBy('nome')->get();
-        return view('auth.register', compact('types'));
+
+    public function create() {
+        $roles = Rile::orderBy('name')->get();
+        return view('auth.register', compact('roles'));
     }
+        
 
     /**
      * Handle an incoming registration request.
@@ -40,14 +42,12 @@ class RegisteredUserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'type_id' => $request->type_id,
             'password' => Hash::make($request->password),
+            'role_id' => $request->role,
         ]);
+            
 
-        //PermissionController::loadPermissions(Auth::user()->type_id);
-
-        UserPermissions::loadPermissions(Auth::user()->type_id);
-
+        UserPermissions::loadPermissions(Auth::user()->role_id);
 
         event(new Registered($user));
 

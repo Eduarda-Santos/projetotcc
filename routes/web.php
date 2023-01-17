@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/testfacade', function () {
     return UserPermissions::test();
 });
-    
+
 Route::get('/', function () {
     return view('welcome');
 })->name('index');

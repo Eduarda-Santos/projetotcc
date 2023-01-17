@@ -195,6 +195,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\CustomFacadeServiceProvider::class,
+        App\Providers\PermissionFacadeServiceProvider::class,
+
 
     ],
 
