@@ -1,4 +1,4 @@
-@extends('templates.main', ['titulo' => "Funcionários", 'rota' => "funcionarios.create"])
+@extends('templates.middleware', ['titulo' => "Funcionários", 'rota' => "funcionarios.create"])
 
 @section('titulo') Cursos @endsection
 @section('conteudo')

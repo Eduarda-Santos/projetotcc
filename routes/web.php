@@ -13,18 +13,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/testfacade', function () {
-    return UserPermissions::test();
-});
-
 Route::get('/', function () {
     return view('welcome');
 })->name('index');
 
 Route::get('/dashboard', function () {
 
-    return view('templates.main')->With('titulo', "");
+    return view('templates.main')->with('titulo', "");
 
 })->middleware(['auth'])->name('dashboard');
 
