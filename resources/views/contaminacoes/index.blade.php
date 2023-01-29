@@ -1,4 +1,4 @@
-@extends('templates.main', ['titulo' => "Contaminações", 'rota' => "contaminacoes.create"])
+@extends('templates.middleware', ['titulo' => "Contaminações", 'rota' => "contaminacoes.create"])
 
 @section('titulo') Contaminações @endsection
 @section('conteudo')

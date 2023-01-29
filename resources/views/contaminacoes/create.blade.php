@@ -1,4 +1,4 @@
-@extends('templates/main', ['titulo'=>"Nova Contaminação"])
+@extends('templates/middleware', ['titulo'=>"Nova Contaminação"])
 
 @section('conteudo')
 
