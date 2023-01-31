@@ -1,4 +1,4 @@
-@extends('templates/middleware', ['titulo'=>"Alterar Funcionário"])
+@extends('templates.middleware', ['titulo'=>"Alterar Funcionário"])
 
 @section('conteudo')
 

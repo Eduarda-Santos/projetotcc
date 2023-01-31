@@ -1,4 +1,4 @@
-@extends('templates.main', ['titulo' => "Vacinas", 'rota' => "vacinas.create"])
+@extends('templates.middleware', ['titulo' => "Vacinas", 'rota' => "vacinas.create"])
 
 @section('titulo') Vacinas @endsection
 @section('conteudo')

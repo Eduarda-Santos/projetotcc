@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\Mid;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,10 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/dashboard', function () {
-
     return view('templates.main')->with('titulo', "");
-
 })->middleware(['auth'])->name('dashboard');
+
+Route::resource('/funcionarios', '\App\Http\Controllers\FuncionarioController')->middleware(['auth']);
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('funcionarios', 'FuncionarioController');
@@ -32,6 +33,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('contaminacoes', 'ContaminacaoController');
 
     Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
+});
+
+Route::middleware(['auth'])->group(function(){
+    Route::resource('vacinas','VacinaController');
 });
 
 require __DIR__.'/auth.php';

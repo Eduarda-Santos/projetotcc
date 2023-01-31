@@ -20,6 +20,9 @@ class FuncionarioPolicy
     public function viewAny(User $user) {
         return UserPermissions::isAuthorized('funcionarios.index');
     }
+    public function view(User $user, Funcionario $funcionario) {
+        return UserPermissions::isAuthorized('funcionarios.show');
+    }
     public function create(User $user) {
         return UserPermissions::isAuthorized('funcionarios.create');
     }

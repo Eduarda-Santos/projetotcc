@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 use App\Facades\UserPermissions;
+use App\Models\Permission;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -26,8 +27,9 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
+        PermissionController::loadPermissions(Auth::user()->type_id);
+        UserPermissions::loadPermissions(Auth::user()->type_id);
         UserPermissions::loadPermissions(Auth::user()->role_id);
-        
         return redirect()->intended(RouteServiceProvider::HOME);
 
     }

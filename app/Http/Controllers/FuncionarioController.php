@@ -10,20 +10,20 @@ class FuncionarioController extends Controller {
     
     public function index() {
 
-        //$this->authorize('viewAny', Funcionario::class);
+        $this->authorize('viewAny', Funcionario::class);
         $data = Funcionario::all();
         return view('funcionarios.index', compact('data'));
 
     }
 
     public function create() {
-        //$this->authorize('create', Funcionario::class);
+        $this->authorize('create', Funcionario::class);
         return view('funcionarios.create');
     }
 
     public function store(Request $request) {
 
-        //$this->authorize('create', Funcionario::class);
+        $this->authorize('create', Funcionario::class);
 
         Funcionario::create([
             'nome' => mb_strtoupper($request->nome, 'UTF-8'),
@@ -52,7 +52,7 @@ class FuncionarioController extends Controller {
 
     public function update(Request $request, $id, Funcionario $funcionario) {
 
-        //$this->authorize('update', $funcionario);
+        $this->authorize('update', $funcionario);
      
         $obj = Funcionario::find($id);
 
@@ -76,7 +76,7 @@ class FuncionarioController extends Controller {
 
     public function destroy($id, Funcionario $funcionario) {
 
-        //$this->authorize('delete', $funcionario);
+        $this->authorize('delete', $funcionario);
         
         $obj = Funcionario::find($id);
 
