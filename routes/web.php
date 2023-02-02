@@ -15,14 +15,23 @@ use App\Http\Middleware\Mid;
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('templates.main')->with('titulo', "");
 })->name('index');
 
 Route::get('/dashboard', function () {
     return view('templates.main')->with('titulo', "");
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource('/funcionarios', '\App\Http\Controllers\FuncionarioController')->middleware(['auth']);
+Route::get('/auth', function () {
+    return view('auth.register');
+});
+
+/*
+Route::get('/register', function () {
+    return view('auth.register')->with('titulo', "");
+})->middleware(['auth'])->name('dashboard');*/
+
+//Route::resource('/funcionarios', '\App\Http\Controllers\FuncionarioController')->middleware(['auth']);
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('funcionarios', 'FuncionarioController');

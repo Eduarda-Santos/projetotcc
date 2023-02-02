@@ -1,4 +1,4 @@
-@extends('templates.middleware', ['titulo' => "Funcionários", 'rota' => "funcionarios.create"])
+@extends('templates.middleware', ['titulo' => "Funcionários", 'rota' => "funcionarios.create", 'permission' => $permissions['funcionarios.create']])
 
 @section('titulo') Funcionários @endsection
 @section('conteudo')
@@ -22,4 +22,5 @@
             </div>
         </div>
     </a>
+@endif
 @endsection

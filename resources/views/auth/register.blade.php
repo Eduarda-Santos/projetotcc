@@ -48,36 +48,5 @@
                 {{ __('Register') }}
             </x-primary-button>
         </div>
-        <div class="mt-4">
-            <select name="type_id" class="rounded-md shadow-sm border-gray-300focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                @foreach($types as $item)
-                <option value="{{$item->id}}">
-                {{ $item->nome }}
-                </option>
-                @endforeach
-            </select>
-        </div>
-
-        <!-- Paper -->
-        <div class="mt-4">
-            <select name="role" class="rounded-md shadow-sm border-gray-300focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-            @foreach($roles as $item)
-            <option value="{{$item->id}}">
-            {{ $item->name }}
-            </option>
-            @endforeach
-            </select>
-        </div>
-
-        <!-- User Type -->
-        <div class="mt-4">
-            <select name="type_id" class="rounded-md shadow-sm border-gray-300focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                @foreach($types as $item)
-                <option value="{{$item->id}}">
-                {{ $item->nome }}
-                </option>
-                @endforeach
-            </select>
-        </div>
     </form>
 </x-guest-layout>

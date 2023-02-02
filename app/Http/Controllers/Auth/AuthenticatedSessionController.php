@@ -27,7 +27,7 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        PermissionController::loadPermissions(Auth::user()->type_id);
+        //PermissionController::loadPermissions(Auth::user()->type_id);
         UserPermissions::loadPermissions(Auth::user()->type_id);
         UserPermissions::loadPermissions(Auth::user()->role_id);
         return redirect()->intended(RouteServiceProvider::HOME);
