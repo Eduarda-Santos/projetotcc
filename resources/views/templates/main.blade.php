@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <title>MCI</title>
-
     <style> 
         .input-group-text { 
             min-width: 120px;
@@ -17,14 +16,15 @@
 <body>
     <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-secondary">
         <div class="container-fluid">
-        <a href="{{route('index')}}" class="navbar-brand ms-sm-3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-map" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
-            </svg>
-            <span class="ms-3 fs-5">MCI - MONITORAMENTO DE CONTAMINAÇÕES EM INSTITUIÇÕES</span>
-        </a>
+            <a href="{{route('index')}}" class="navbar-brand ms-sm-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-map" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
+                </svg>
+                <span class="ms-3 fs-5">MCI - MONITORAMENTO DE CONTAMINAÇÕES EM INSTITUIÇÕES</span>
+            </a>
             <div class="collapse navbar-collapse" id="itens">
                 <ul class="navbar-nav ms-auto">
+                    
                      <li class="nav-item dropdown ps-2">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FFF" class="bi bi-border-width" viewBox="0 0 16 16">
@@ -32,10 +32,13 @@
                             </svg>
                             <span class="ps-1 text-white">Opções</span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{route('funcionarios.index')}}" class="dropdown-item">Funcionários</a></li>
-                            <li><a href="{{route('vacinas.index')}}" class="dropdown-item">Vacinas</a></li>
-                            <li><a href="{{route('areas.index')}}" class="dropdown-item">Áreas</a></li>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <li><a href="{{route('funcionarios.index')}}" class="dropdown-item" type="button">Funcionários</a></li>
+                            <li><a href="{{route('vacinas.index')}}" class="dropdown-item" type="button">Vacinas</a></li>
+                            <li><a href="{{route('areas.index')}}" class="dropdown-item" type="button">Áreas</a></li>
+                            <li><a href="{{route('contaminacoes.index')}}" class="dropdown-item" type="button">Contaminações</a></li>
+                            <li><a href="{{route('vacinasFuncionario.index')}}" class="dropdown-item" type="button">Vacina dos Funcionários</a></li>
+                            <a class="dropdown-item" href="">Relatórios</a>
                         </ul>
                     </li>
                     <li class="nav-item ps-2 me-3">
@@ -49,7 +52,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> 
     <div class="container py-4">
         <div class="row">
             <div class="col">
@@ -68,51 +71,49 @@
         <hr>
         @yield('conteudo')
     </div>
+    <div class="container">
+        <div class="row marcador align-items-center">
+            <div class="col mx-auto text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" fill="currentColor" class="bi bi-map" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
+                </svg>
+            </div>
+        </div> 
+    </div>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col">
+                <h3 class="text-secondary d-none d-md-block"><b>{{ $titulo }}</b></h3>
+            </div>
+            @if(isset($rota))
+                <div class="col d-flex justify-content-end">
+                    <a href= "{{ route($rota) }}" class="btn btn-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FFF" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                        </svg>
+                    </a>
+                </div>
+            @endif
+            <div class="mx-auto" style="width: 700px;">
+                <h1 class="h1">MCI</h1>
+            </div>
+        </div>
+        <hr>
+        @yield('conteudo')
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="row justify-content-end">
+                <div class="col-5">
+                    <button type="button" class="btn btn-secondary btn-lg" href="{{route('login')}}">Login</button>          
+                </div>
+                <div class="col-4">
+                    <button type="button" class="btn btn-secondary btn-lg" href="{{route('register')}}">Cadastro</button>          
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-<div class="modal fade" tabindex="-1" id="infoModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title text-primary">Mais Informações</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="infoModal" onclick="closeInfoModal()" aria-label="Close"></button>
-            </div>
-            <div class="modal-body text-secondary">
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-block align-content-center" onclick="closeInfoModal()">
-                    OK
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" tabindex="-1" id="removeModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-danger">Operação de Remoção</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="removeModal" onclick="closeRemoveModal()" aria-label="Close"></button>
-        </div>
-        <input type="hidden" id="id_remove">
-        <div class="modal-body text-secondary">
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary btn-block align-content-center" onclick="closeRemoveModal()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16">
-                    <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z"/>
-                </svg>
-                &nbsp; Não
-            </button>
-          <button type="button" class="btn btn-danger" onclick="remove()">
-                Sim &nbsp;
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
-                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
-                </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-</div>
 
 <script type="text/javascript">
 
@@ -192,5 +193,6 @@
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
 <script src="{{ asset('js/jquery.mask.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 @yield('script')
 </html>
