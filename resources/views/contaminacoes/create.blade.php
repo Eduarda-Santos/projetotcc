@@ -1,9 +1,32 @@
-@extends('templates/middleware', ['titulo'=>"Nova Contaminação"])
+@extends('templates/main', ['titulo'=>"Nova Contaminação"])
 
 @section('conteudo')
 
 <form action="{{ route('contaminacoes.store') }}" method="POST">
     @csrf
+    <select name="contaminacao" id="nome">         
+        <?php
+            echo "<option value='0'>Selecione</option>";
+            echo $option;
+        ?>        
+    </select>
+    <div class="row">
+        <div class="col">
+            <div class="form-floating mb-3">
+                <select aria-label="Default select example" class="form-select @if($errors->has('id_funcionario')) is-invalid @endif" name="id_funcionario" value="{{old('id_funcionario')}}">
+                    <option for="id_funcionario"  value="id_funcionario">Feminino</option>
+                    <option for="sexo" value="Masculino">Masculino</option>
+                    <option for="sexo" value="0">Prefiro não opinar</option>
+                </select>
+                <label>Sexo do Funcionário</label>
+                @if($errors->has('id_funcionario'))
+                <div class='invalid-feedback'>
+                    {{ $errors->first('id_funcionario') }}
+                </div>
+                @endif
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col">
             <div class="form-floating mb-3">

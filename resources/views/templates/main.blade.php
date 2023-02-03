@@ -38,7 +38,7 @@
                             <li><a href="{{route('areas.index')}}" class="dropdown-item" type="button">Áreas</a></li>
                             <li><a href="{{route('contaminacoes.index')}}" class="dropdown-item" type="button">Contaminações</a></li>
                             <li><a href="{{route('vacinasFuncionario.index')}}" class="dropdown-item" type="button">Vacina dos Funcionários</a></li>
-                            <a class="dropdown-item" href="">Relatórios</a>
+                            <li><a href="{{route('relatorios')}}" class="dropdown-item" type="button">Relatórios</a></li>
                         </ul>
                     </li>
                     <li class="nav-item ps-2 me-3">

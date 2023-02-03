@@ -15,6 +15,8 @@ use Illuminate\View\View;
 use App\Facades\UserPermissions;
 use App\Models\Type;
 use App\Models\Permission;
+use App\Models\Role;
+
 
 
 class RegisteredUserController extends Controller
@@ -24,7 +26,9 @@ class RegisteredUserController extends Controller
      */
 
     public function create() {
-        return view('auth.register');
+        $roles = Role::orderBy('name')->get();
+        return view('auth.register', compact('roles'));
+        //return view('auth.register');
     }
         
         
@@ -41,13 +45,20 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
-
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role_id' => $request->role,
+        ]);
+            
+/*
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'type_id' => $request->type_id,
             'password' => Hash::make($request->password),
-        ]);
+        ]);*/
             
         //PermissionController::loadPermissions(Auth::user()->type_id);
         UserPermissions::loadPermissions(Auth::user()->role_id);

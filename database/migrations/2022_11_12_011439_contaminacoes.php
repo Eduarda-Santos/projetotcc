@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('contaminacoes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('funcionario_id');
+            $table->foreign('funcionario_id')->references('id')->on('funcionarios');
             $table->date('dataInicioSintomas');
             $table->date('dataInicioAfastamento');
             $table->date('dataRealizacaoExame');

@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contaminacao extends Model
 {
+    public function funcionario() {
+        return $this->hasOne('\App\Models\Funcionario');
+    }
     protected $table = "contaminacoes";
-    protected $fillable = ['dataInicioSintomas','dataInicioAfastamento','dataRealizacaoExame','resultadoExame','dataTerminoAfastamento','anexo','descricao'];
+    protected $fillable = ['funcionario_id','dataInicioSintomas','dataInicioAfastamento','dataRealizacaoExame','resultadoExame','dataTerminoAfastamento','anexo','descricao'];
     use HasFactory;
 }
