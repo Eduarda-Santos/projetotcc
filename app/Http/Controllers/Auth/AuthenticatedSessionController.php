@@ -31,7 +31,7 @@ class AuthenticatedSessionController extends Controller
     {
         //PermissionController::loadPermissions(Auth::user()->type_id);
         UserPermissions::loadPermissions(Auth::user()->role_id);
-        UserPermissions::loadPermissions(Auth::user()->type_id);
+        //UserPermissions::loadPermissions(Auth::user()->type_id);
         return redirect()->intended(RouteServiceProvider::HOME);
 
     }

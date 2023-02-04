@@ -71,6 +71,48 @@
         <hr>
         @yield('conteudo')
     </div>
+    <div class="container">
+        <div class="row marcador align-items-center">
+            <div class="col mx-auto text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" fill="currentColor" class="bi bi-map" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
+                </svg>
+            </div>
+        </div> 
+    </div>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col">
+                <h3 class="text-secondary d-none d-md-block"><b>{{ $titulo }}</b></h3>
+            </div>
+            @if(isset($rota))
+                <div class="col d-flex justify-content-end">
+                    <a href= "{{ route($rota) }}" class="btn btn-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FFF" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                        </svg>
+                    </a>
+                </div>
+            @endif
+            <div class="mx-auto" style="width: 700px;">
+                <h1 class="h1">MCI</h1>
+            </div>
+        </div>
+        <hr>
+        @yield('conteudo')
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="row justify-content-end">
+                <div class="col-5">
+                    <button type="button" class="btn btn-secondary btn-lg" href="{{route('login')}}">Login</button>          
+                </div>
+                <div class="col-4">
+                    <button type="button" class="btn btn-secondary btn-lg" href="{{route('register')}}">Cadastro</button>          
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script type="text/javascript">

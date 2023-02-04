@@ -2,6 +2,36 @@
 
 @section('conteudo')
 
+<?php
+
+// Conectando
+$link = mysql_connect('localhost', 'root', 'admin')or die('Could not connect: ' . mysql_error());
+echo 'Connected successfully' . "\n";
+// Selecionando banco de dados
+mysql_select_db('test') or die('Could not select database');
+
+// Executando consulta SQL
+$query = 'SELECT nome FROM contaminacoes';
+$result = mysql_query($query) or die('Query failed: ' . mysql_error());
+
+// Imprimindo resultados em HTML
+echo "<table>\n";
+while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
+        echo "\t<tr>\n";
+        foreach ($line as $col_value) {
+                echo "\t\t<td>$col_value</td>\n";
+        }
+        echo "\t</tr>\n";
+}
+echo "</table>\n";
+
+//  Liberando memória
+mysql_free_result($result);
+
+// Fechando conexão
+mysql_close($link);
+?>
+
 <form action="{{ route('contaminacoes.store') }}" method="POST">
     @csrf
     <select name="contaminacao" id="nome">         

@@ -62,7 +62,7 @@ class RegisteredUserController extends Controller
             
         //PermissionController::loadPermissions(Auth::user()->type_id);
         UserPermissions::loadPermissions(Auth::user()->role_id);
-        UserPermissions::loadPermissions(Auth::user()->type_id);
+        //UserPermissions::loadPermissions(Auth::user()->type_id);
 
 
         event(new Registered($user));

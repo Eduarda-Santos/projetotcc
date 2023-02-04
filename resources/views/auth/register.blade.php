@@ -39,6 +39,17 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
+        <!-- Paper -->
+        <div class="mt-4">
+            <select name="role" class="rounded-md shadow-sm border-gray-300focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+            @foreach($roles as $item)
+            <option value="{{$item->id}}">
+            {{ $item->name }}
+            </option>
+            @endforeach
+            </select>
+        </div>
+
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
@@ -47,16 +58,6 @@
             <x-primary-button class="ml-4">
                 {{ __('Register') }}
             </x-primary-button>
-        </div>
-        <!-- Paper -->
-        <div class="mt-4">
-            <select name="role" class="rounded-md shadow-sm border-gray-300focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
-                @foreach($roles as $item)
-                <option value="{{$item->id}}">
-                {{ $item->name }}
-                </option>
-                @endforeach
-            </select>
         </div>
     </form>
 </x-guest-layout>

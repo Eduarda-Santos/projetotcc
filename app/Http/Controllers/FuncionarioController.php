@@ -42,6 +42,8 @@ class FuncionarioController extends Controller {
     public function show($id) { }
 
     public function edit($id, Funcionario $funcionario) {
+
+        $this->authorize('update', $curso);
         
         $data = Funcionario::find($id);
 
