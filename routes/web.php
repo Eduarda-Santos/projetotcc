@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\Mid;
+use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +17,7 @@ use App\Http\Middleware\Mid;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('templates.home')->with('titulo', "");
 })->name('index');
 
@@ -39,6 +41,11 @@ Route::get('/relatorios')->name('relatorios');
 Route::middleware(['auth'])->group(function(){
     Route::resource('vacinas','VacinaController');
 });
+
+Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
+Route::post('register', [RegisteredUserController::class, 'store']);
+Route::get('login', [AuthenticatedSessionController::class, 'create'])->name('login');
+Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
 require __DIR__.'/auth.php';
 /*

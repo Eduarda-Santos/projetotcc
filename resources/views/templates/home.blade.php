@@ -105,10 +105,10 @@
         <div class="row">
             <div class="row justify-content-end">
                 <div class="col-5">
-                    <button type="button" class="btn btn-secondary btn-lg" href="{{route('login')}}">Login</button>          
+                    <a href="{{route('login')}}" class="btn btn-secondary btn-lg" role="button" aria-pressed="true">Login</a> 
                 </div>
                 <div class="col-4">
-                    <button type="button" class="btn btn-secondary btn-lg" href="{{route('register')}}">Cadastro</button>          
+                <a href="{{route('register')}}" class="btn btn-secondary btn-lg" role="button" aria-pressed="true">Cadastro</a>          
                 </div>
             </div>
         </div>

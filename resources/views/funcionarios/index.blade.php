@@ -1,10 +1,10 @@
-@extends('templates.middleware', ['titulo' => "Funcionários", 'rota' => "funcionarios.create", 'permission' => $permissions['funcionarios.create']])
+@extends('templates.middleware', ['titulo' => "Funcionários", 'rota' => "funcionarios.create"])
 
 @section('titulo') Funcionários @endsection
 @section('conteudo')
 
-@if(UserPermissions::isAuthorized('funcionarios.edit'))
-    <a href= "{{ route('funcionarios.edit', '1') }}" class="btn btn-success">
+@can('viewAny', $item)
+    <a href= "{{ route('funcionarios.edit', $item) }}" class="btn btn-success">
         <div class="row">
             <div class="col">
                 
@@ -22,5 +22,5 @@
             </div>
         </div>
     </a>
-@endif
+@endcan
 @endsection
