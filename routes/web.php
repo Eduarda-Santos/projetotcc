@@ -82,7 +82,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('vacinas', 'VacinaController');
     Route::resource('vacinasFuncionario', 'VacinaFuncionarioController');
     Route::resource('contaminacoes', 'ContaminacaoController');
-});
+});*/
 
 
 Route::redirect('/funcionarios', 301);
@@ -103,4 +103,4 @@ Route::resource('vacinasFuncionario', 'VacinaFuncionarioController');
 Route::redirect('/contaminacoes', 306);
 Route::resource('contaminacoes', 'ContaminacaoController'); 
 
-require __DIR__.'/auth.php';*/
+require __DIR__.'/auth.php';

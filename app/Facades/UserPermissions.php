@@ -11,10 +11,10 @@ class UserPermissions {
             foreach($perm as $item) {
                 $sess[$item->resource->name] = (boolean) $item->permissao;
             }
-            session(['user_permissions' => $sess]);
+            session(['userpermissions' => $sess]);
         }
         public static function isAuthorized($resource) {
-            $permissions = session('user_permissions');
+            $permissions = session('userpermissions');
             return $permissions[$resource];
         }
         public static function test() {

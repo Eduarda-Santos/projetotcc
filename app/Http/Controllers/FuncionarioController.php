@@ -11,6 +11,7 @@ class FuncionarioController extends Controller {
     public function index() {
 
         $this->authorize('viewAny', Funcionario::class);
+        $data = Funcionario::paginate(5);
         $data = Funcionario::all();
         return view('funcionarios.index', compact('data'));
 
@@ -43,7 +44,7 @@ class FuncionarioController extends Controller {
 
     public function edit($id, Funcionario $funcionario) {
 
-        $this->authorize('update', $curso);
+        $this->authorize('update', $data);
         
         $data = Funcionario::find($id);
 
