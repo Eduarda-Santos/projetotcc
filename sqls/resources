@@ -1,0 +1,43 @@
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(1,'areas.index','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(2,'contaminacoes.index','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(3,'exames.index','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(4,'funcionarios.index','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(5,'testes.index','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(6,'vacinas.index','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(7,'vacinasFuncionario.index','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(8,'areas.create','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(9,'contaminacoes.create','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(10,'exames.create','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(11,'funcionarios.create','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(12,'testes.create','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(13,'vacinas.create','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(14,'vacinasFuncionario.create','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(15,'areas.edit','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(16,'contaminacoes.edit','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(17,'exames.edit','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(18,'funcionarios.edit','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(19,'testes.edit','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(20,'vacinas.edit','[value-3]','[value-4]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES 
+(21,'vacinasFuncionario.edit','[value-3]','[value-4]');
+

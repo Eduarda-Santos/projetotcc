@@ -6,7 +6,6 @@ REQUIRE_ONCE "funcao.php";
     $result = mysqli_query($conexao, "CALL listar();") or die("Erro na query da procedure: " . mysqli_error());
 
     while ($row = mysqli_fetch_array($result)) {   
-        echo  $row[0] . "<br>\n" .
-                $row[1] . "<br>\n"; 
+        echo  $row[0] . "<br>\n" ; 
     }
 ?>

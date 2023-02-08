@@ -12,10 +12,10 @@
                         :title="'Vacinas dos Funcionários'"
                         :header="['DOSE','DATA DA VACINA','LOTE','AÇÕES']" 
                         :data="$data"
-                        :fields="['dose','data da vacina','lote']"
+                        :fields="['dose','dataVacina','lote']"
                         :hide="[true, true, true, false]" 
                         :crud="'vacinasFuncionario'"
-                        :info="['dose','data da vacina','lote']"
+                        :info="['dose','dataVacina','lote']"
                         :remove="'nome'"
                     />
 

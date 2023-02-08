@@ -1,7 +1,7 @@
 @extends('templates.middleware', ['titulo' => "Funcionários", 'rota' => "funcionarios.create"])
 
 @section('titulo') Funcionários @endsection
-
+if(!PermissionController::isAuthorized('funcionarios.index')) {
 @section('conteudo')
     @can('viewAny', $item)
         <a href= "{{ route('funcionarios.index', $item) }}" class="btn btn-success">
@@ -23,4 +23,7 @@
             </div>
         </a>
     @endcan
+   
+}
+
 @endsection

@@ -12,6 +12,7 @@ use Illuminate\View\View;
 use App\Facades\UserPermissions;
 use App\Models\Permission;
 use App\Models\Role;
+use Illuminate\Contracts\Auth\Authenticatable;
 
 
 class AuthenticatedSessionController extends Controller
@@ -23,16 +24,42 @@ class AuthenticatedSessionController extends Controller
     {
         return view('auth.login');
     }
+    
 
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): RedirectResponse
+    public function authenticate(LoginRequest $request): RedirectResponse
     {
+
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+            'role_id' => ['role_id'],
+        ]);
+ 
+
+        
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+ 
+            return redirect()->intended('dashboard');
+        }
+
+        else{
+
+        }
+ 
         //PermissionController::loadPermissions(Auth::user()->type_id);
         UserPermissions::loadPermissions(Auth::user()->role_id);
         //UserPermissions::loadPermissions(Auth::user()->type_id);
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect('/home');
+
+    }
+
+    public function store(Request $request): RedirectResponse
+    {
+
 
     }
 
@@ -47,6 +74,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/home');
     }
 }

@@ -1,4 +1,4 @@
-@extends('templates.middleware', ['titulo' => "Áreas", 'rota' => "areas.create"])
+@extends('templates.middleware', ['titulo' => "Áreas", 'rota' => "areas.create", 'permissions' => '0'])
 
 @section('titulo') Cursos @endsection
 

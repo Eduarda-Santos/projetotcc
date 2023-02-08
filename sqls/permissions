@@ -1,0 +1,44 @@
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(1,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(2,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(3,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(4,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(5,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(6,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(7,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(8,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(9,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(10,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(11,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(12,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(13,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(14,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(15,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(16,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(17,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(18,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(19,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(20,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES
+(21,2,'[value-3]','[value-4]','[value-5]');
+INSERT INTO `resources`(`id`, `name`, `created_at`, `updated_at`) VALUES ('22','auth.register','[value-3]','[value-4]');
+INSERT INTO `permissions`(`resource_id`, `role_id`, `permissao`, `created_at`, `updated_at`) VALUES (22,1,1,'[value-4]','[value-5]');

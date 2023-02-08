@@ -1,5 +1,6 @@
 @extends('templates.middleware', ['titulo'=>"Alterar Funcionário"])
 
+@if(UserPermissions::isAuthorized('funcionarios.edit'))
 @section('conteudo')
     @can('update', $item)
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">

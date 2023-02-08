@@ -10,10 +10,17 @@ class FuncionarioController extends Controller {
     
     public function index() {
 
-        $this->authorize('viewAny', Funcionario::class);
+        if(!PermissionController::isAuthorized('cursos.index')) {
+            abort(403);
+            }
+            $permissions = session('user_permissions');
+            return view('funcionarios.index', compact('permissions'));
+
+        
         $data = Funcionario::paginate(5);
         $data = Funcionario::all();
-        return view('funcionarios.index', compact('data'));
+        //$this->authorize('viewAny', Funcionario::class);
+        //return view('funcionarios.index', compact('data'));
 
     }
 

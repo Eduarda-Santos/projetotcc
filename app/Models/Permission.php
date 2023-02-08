@@ -13,5 +13,7 @@ class Permission extends Model
     public function role() {
         return $this->belongsTo('\App\Models\Role');
     }
+    protected $table = "permissions";
+    protected $fillable = ['resource_id', 'role_id','permissao'];
     use HasFactory;
 }

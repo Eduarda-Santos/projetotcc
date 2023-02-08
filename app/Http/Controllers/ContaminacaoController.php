@@ -9,6 +9,10 @@ class ContaminacaoController extends Controller {
     
     public function index() {
         $this->authorize('viewAny', Contaminacao::class);
+/*
+        $roles = Role::orderBy('name')->get();
+        return view('auth.register', compact('roles'));*/
+
         $data = Contaminacao::paginate(5);
         $data = Contaminacao::all();
         return view('contaminacoes.index', compact('data'));
@@ -22,17 +26,16 @@ class ContaminacaoController extends Controller {
     public function store(Request $request) {
 
         $this->authorize('create', Contaminacao::class);
-        $request->validate([
-            'nome' => 'required|max:50|min:10',
-            ]);
 
         Contaminacao::create([
+            'funcionario_id' => 1,
             'dataInicioSintomas' => $request->dataInicioSintomas,
             'dataInicioAfastamento' => $request->dataInicioAfastamento,
             'dataRealizacaoExame' => $request->dataRealizacaoExame,
             'resultadoExame' => $request->resultadoExame,
             'dataTerminoAfastamento' => $request->dataTerminoAfastamento,
             'descricao' => $request->descricao,
+            'anexo' => 1,
         ]);
         
         return redirect()->route('contaminacoes.index');
@@ -58,12 +61,14 @@ class ContaminacaoController extends Controller {
         if(!isset($obj)) { return "<h1>ID: $id não encontrado!"; }
 
         $obj->fill([
+            'funcionario_id' => $request->funcionario_id,
             'dataInicioSintomas' => $request->dataInicioSintomas,
             'dataInicioAfastamento' => $request->dataInicioAfastamento,
             'dataRealizacaoExame' => $request->dataRealizacaoExame,
             'resultadoExame' => $request->resultadoExame,
             'dataTerminoAfastamento' => $request->dataTerminoAfastamento,
             'descricao' => $request->descricao,
+            'anexo' => 1,
         ]);
 
         $obj->save();

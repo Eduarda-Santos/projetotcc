@@ -11,7 +11,9 @@ $result = "CALL listar()";
 $rstSql = executeStoredProcedure($result);
 while ($rows = mysqli_fetch_assoc($rstSql)){   
 
-echo $rows[nome]; }
+echo $rows[nome]; 
+
+}
 ?>
 <html lang="pt-br">
     <head>
@@ -24,9 +26,7 @@ echo $rows[nome]; }
         <link href="boostrap/css/bootstrap-theme.min.css" rel="stylesheet">
     </head>
     <body>
-        
+
     </body>
-
-
 </html>
 @endsection

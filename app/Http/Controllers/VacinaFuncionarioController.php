@@ -53,8 +53,8 @@ class VacinaFuncionarioController extends Controller {
         if(!isset($obj)) { return "<h1>ID: $id não encontrado!"; }
 
         $obj->fill([
-            'vacina_id' => $request->vacina_id,
-            'funcionario_id' => $request->funcionario_id,
+            'vacina_id' => 1,
+            'funcionario_id' => 1,
             'dose' => $request->dose,
             'dataVacina' => $request->dataVacina,
             'lote' => $request->lote,

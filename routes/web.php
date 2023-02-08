@@ -17,6 +17,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 |
 */
 
+
 Route::get('/home', function () {
     return view('templates.home')->with('titulo', "");
 })->name('index');
@@ -33,10 +34,14 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('vacinasFuncionario', 'VacinaFuncionarioController');
     Route::resource('contaminacoes', 'ContaminacaoController');
 
-    Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
+    //Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
 });
 
 Route::get('/relatorios')->name('relatorios');
+
+Route::get('/relatorios', function () {
+    return view('relatorios')->with('titulo', "");
+});
 
 Route::middleware(['auth'])->group(function(){
     Route::resource('vacinas','VacinaController');
